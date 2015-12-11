@@ -1,5 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 
+#original{
+	height: 200px;
+	margin-top: 200px;
+}
+
+
 @keyframes rotating {
 	from {transform: rotate(0deg);}
 	to {transform: rotate(360deg);}
@@ -68,8 +74,8 @@ body{
 	position: absolute;
 	right: 80px;
 	top: -50px;
+	transform: translate(0, 0);
 	transition: .5s;
-
 }
 
 
