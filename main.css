@@ -1,0 +1,187 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+
+@keyframes rotating {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+
+@keyframes playing {
+	from {width: 630px;}
+	to {width: 100px;}
+}
+
+
+body{
+	background: #bbb;
+	margin: 100px;
+	font-family: 'Roboto', Calibri;
+	color: #777;
+	font-weight: 300;
+}
+
+.music{
+	background: #fff;
+	width: 800px;
+	height: 150px;
+	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	position: relative;
+}
+
+.album-container{
+	height: 150px;
+	width: 180px;
+	float: left;
+	overflow: hidden;
+}
+
+.album-cover{
+	box-sizing: border-box;
+	height: 150px;
+	width: 150px;
+	padding: 8px;
+	box-shadow: 10px 0px 10px 0px rgba(217, 217, 217, 0.75);
+	transition: .5s;
+}
+
+.song-title{
+	padding-top: 40px;
+	margin: 0 0 0 220px;
+	font-size: 24px;
+	font-weight: 400;
+	text-transform: uppercase;
+	transition: .14s;
+}
+
+.group-title{
+	margin-top: 20px;
+	margin-left: 220px;
+	font-size: 18px;
+	color: #aaa;
+	font-weight: 300;
+	transition: .25s;
+}
+
+.container{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 80px;
+	top: -50px;
+	transition: .5s;
+
+}
+
+
+.circle{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	cursor: pointer;
+	box-shadow: 0px 0px 10px 0px rgba(217, 217, 217, 0.75);
+	transition: .5s;
+	right: 0;
+	top: 0;
+	background: #fff;
+}
+
+.vinyl{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+}
+
+
+
+.triangle{
+	border: 18px solid transparent;
+	border-left: 24px solid #D32F2F;
+	margin-top: 32px;
+	margin-left: 40px;
+	transition: .5s;
+}
+
+.time{
+	position: absolute;
+	right: 85px;
+	top: 72px;
+	font-size: 18px;
+	transition: .25s;
+}
+
+.time::before{
+	content: '';
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: bottom;
+	background: url('img/time.png') no-repeat;
+	width: 24px;
+	height: 24px;
+	opacity: 0.5;
+}
+
+
+/* AFTER CLICK ON PLAY*/
+
+
+.playing .group-title,
+.playing .song-title,
+.playing .time{
+	opacity: 0;
+}
+
+
+.playing .album-cover{
+	transform: translate(-180px, 0);
+}
+
+.playing .container{
+	width: 630px;
+	transform: translate(-20px, 75px);
+	animation: playing 10s infinite linear .5s;
+}
+
+.playing .circle{
+	top: 0;
+	right: -20px;
+}
+
+.playing .vinyl{
+	animation: rotating .5s infinite linear .5s;
+}
+
+.playing .triangle{
+	border: none;
+	border-right: 6px solid #D32F2F;
+	border-left: 6px solid #D32F2F;
+	width: 12px;
+	height: 24px;
+	margin-top: 38px;
+	margin-left: 40px;
+}
+
+.playing .visualization{
+	margin-top: 35px;
+	margin-left: 50px;
+	overflow: hidden;
+	height: 30px;
+}
+
+.playing .visualization div{
+	height: 40px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 4px;
+	background: #D32F2F;
+}
+
+
+
+
+
+
+
+
+
