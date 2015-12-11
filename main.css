@@ -23,8 +23,9 @@ body{
 	background: #fff;
 	width: 800px;
 	height: 150px;
-	box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 0px 20px 5px rgba(28,28,28,1);
 	position: relative;
+	margin: auto;
 }
 
 .album-container{
@@ -141,6 +142,7 @@ body{
 	width: 630px;
 	transform: translate(-20px, 75px);
 	animation: playing 10s infinite linear .5s;
+	transition: .5s;
 }
 
 .playing .circle{
