@@ -1,14 +1,18 @@
 var interval = null;
+var audio = new Audio('audio/Danger.mp3');
 
 document.addEventListener('click', function(){
 
 	if (!event.target.getAttribute('data-play')) return;
 	
+	
 	document.querySelector('.music').classList.toggle('playing');
 	if (interval === null){
 		console.log(1);
 		interval = visualization();
+		audio.play();
 	} else {
+		audio.pause();
 		clearInterval(interval);
 		interval = null;
 	}
@@ -27,3 +31,5 @@ function visualization(){
 	
 	return interval;
 }
+
+var a = new Audio('audio/Danger.mp3');

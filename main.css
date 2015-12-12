@@ -1,35 +1,41 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 
-#original{
-	height: 200px;
-	margin-top: 200px;
-}
-
 
 @keyframes rotating {
 	from {transform: rotate(0deg);}
 	to {transform: rotate(360deg);}
 }
 
-@keyframes playing {
-	from {width: 630px;}
-	to {width: 100px;}
+@keyframes reducing {
+	from {width: 600px;}
+	to {width: 0;}
+}
+
+@keyframes vinyl-moving {
+	from {margin-right: 0;}
+	to {margin-right: -530px;}
 }
 
 
 body{
-	background: #bbb;
+	background: #eee;
 	margin: 100px;
 	font-family: 'Roboto', Calibri;
 	color: #777;
 	font-weight: 300;
 }
 
+
+#original{
+	height: 200px;
+	margin-top: 200px;
+}
+
 .music{
 	background: #fff;
 	width: 800px;
 	height: 150px;
-	box-shadow: 0px 0px 20px 5px rgba(28,28,28,1);
+	box-shadow: 0px 0px 20px 10px rgba(217, 217, 217, 0.75);
 	position: relative;
 	margin: auto;
 }
@@ -68,38 +74,41 @@ body{
 	transition: .25s;
 }
 
-.container{
-	width: 100px;
-	height: 100px;
+.circle,
+.vinyl{
 	position: absolute;
 	right: 80px;
 	top: -50px;
-	transform: translate(0, 0);
 	transition: .5s;
 }
-
 
 .circle{
 	width: 100px;
 	height: 100px;
-	border-radius: 50%;
-	position: absolute;
 	cursor: pointer;
-	box-shadow: 0px 0px 10px 0px rgba(217, 217, 217, 0.75);
-	transition: .5s;
-	right: 0;
-	top: 0;
+	box-shadow: 0px 0px 20px 5px rgba(217, 217, 217, 0.75);
 	background: #fff;
+	border-radius: 50%;
+	
 }
 
-.vinyl{
+.vinyl img{
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	position: absolute;
-	left: 0;
+
 }
 
+.visualization{
+	position: absolute;
+	overflow: hidden;
+	height: 30px;
+	width: 50px;
+	overflow: hidden;
+	right: 105px;
+	top: 0;
+	transition: .5s;
+}
 
 
 .triangle{
@@ -130,6 +139,15 @@ body{
 }
 
 
+
+.visualization div{
+	display: inline-block;
+	vertical-align: middle;
+	width: 4px;
+	background: #D32F2F;
+}
+
+
 /* AFTER CLICK ON PLAY*/
 
 
@@ -144,20 +162,19 @@ body{
 	transform: translate(-180px, 0);
 }
 
-.playing .container{
-	width: 630px;
-	transform: translate(-20px, 75px);
-	animation: playing 10s infinite linear .5s;
-	transition: .5s;
-}
-
 .playing .circle{
-	top: 0;
-	right: -20px;
+	transform: translateY(75px)
 }
 
 .playing .vinyl{
+	transform: translate(-540px, 75px);
+	
+	animation: vinyl-moving 245s infinite linear .5s;
+}
+
+.playing .vinyl img{
 	animation: rotating .5s infinite linear .5s;
+
 }
 
 .playing .triangle{
@@ -171,19 +188,11 @@ body{
 }
 
 .playing .visualization{
-	margin-top: 35px;
-	margin-left: 50px;
-	overflow: hidden;
-	height: 30px;
+	width: 600px;
+	transform: translateY(57px);
+	animation: reducing 245s infinite linear .5s;
 }
 
-.playing .visualization div{
-	height: 40px;
-	display: inline-block;
-	vertical-align: middle;
-	width: 4px;
-	background: #D32F2F;
-}
 
 
 
