@@ -1,3 +1,27 @@
+/*test*/
+
+.dd{
+	background: gold;
+	width: 200px;
+	height: 100px;
+	margin: 20px;
+	font-weight: bold;
+}
+
+.d1:hover{
+	background: black;
+}
+
+.d2:active{
+	background: black;
+}
+
+.d3:active{
+	background: black;
+}
+
+
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 
 
