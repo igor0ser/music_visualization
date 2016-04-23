@@ -38,12 +38,17 @@ $(document).ready(function() {
 
     function scrollShadower(e){
             var target = $(e.target);
-            target.removeClass('scrolled').removeClass('scrolled-end');
-            if (target.scrollLeft() > 0 ){
+            if (target.scrollLeft() > 0 && !target.hasClass('scrolled')){
                 target.addClass('scrolled');
             }
-            if (target.scrollRight() < 2){
+            else if (target.scrollRight() < 2 && !target.hasClass('scrolled-end')){
                 target.addClass('scrolled-end');
+            }
+            else if (target.scrollLeft() <= 0 && target.hasClass('scrolled')){
+                target.removeClass('scrolled');
+            }
+           else if (target.scrollRight() >= 2 && target.hasClass('scrolled-end')){
+                target.removeClass('scrolled-end');
             }
             console.log(target.scrollRight());
         }
@@ -53,7 +58,7 @@ $(document).ready(function() {
     $( document ).ready(addScrollable);
 
     $( '.responsive-table' ).on('scroll', scrollShadower);
-    $( '.responsive-table' ).on('touchmove', scrollShadower);
+    /*$( '.responsive-table' ).on('touchmove', scrollShadower);*/
 
  
 });
