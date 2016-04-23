@@ -35,7 +35,7 @@ $(document).ready(function() {
         }
         console.log('removeScrollable');
     }
-
+    var inn = $('#inn');
     function scrollShadower(e){
             var target = $(e.target);
             if (target.scrollLeft() > 0 && !target.hasClass('scrolled')){
@@ -50,7 +50,7 @@ $(document).ready(function() {
            else if (target.scrollRight() >= 2 && target.hasClass('scrolled-end')){
                 target.removeClass('scrolled-end');
             }
-            console.log(target.scrollRight());
+            inn.text(target.scrollRight());
         }
 
     $( window ).resize(addScrollable);
