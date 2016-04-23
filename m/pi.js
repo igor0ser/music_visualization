@@ -38,21 +38,21 @@ $(document).ready(function() {
     var inn = $('#inn');
     function scrollShadower(e){
             var target = $(e.target);
-            if (target.scrollLeft() > 0 && !target.hasClass('scrolled')){
-                target.addClass('scrolled');
+            var parent = target.parent();
+            if (target.scrollLeft() > 0 && !parent.hasClass('scrolled')){
+                parent.addClass('scrolled');
             }
-            else if (target.scrollRight() < 2 && !target.hasClass('scrolled-end')){
-                target.addClass('scrolled-end');
+            else if (target.scrollRight() < 2 && !parent.hasClass('scrolled-end')){
+                parent.addClass('scrolled-end');
             }
-            else if (target.scrollLeft() <= 0 && target.hasClass('scrolled')){
-                target.removeClass('scrolled');
+            else if (target.scrollLeft() <= 0 && parent.hasClass('scrolled')){
+                parent.removeClass('scrolled');
             }
-           else if (target.scrollRight() >= 2 && target.hasClass('scrolled-end')){
-                target.removeClass('scrolled-end');
+           else if (target.scrollRight() >= 2 && parent.hasClass('scrolled-end')){
+                parent.removeClass('scrolled-end');
             }
             inn.text(target.scrollRight());
-                target.children('.after').css('right', -target.scrollLeft());
-                target.children('.before').css('left', -target.scrollRight());
+
 
         }
 

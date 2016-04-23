@@ -10694,8 +10694,8 @@ img.mfp-img {
 .ipi-page .pi-section .table-holder.scrollable .responsive-table {
   border-radius: 5px 0 0 5px;
 }
-.responsive-table .after, 
-.responsive-table .before {
+.table-holder .after, 
+.table-holder .before {
   content: '';
   height: 100%;
   width: 3px;
@@ -10706,16 +10706,17 @@ img.mfp-img {
   z-index: 201;
   background: red;
 }
-.responsive-table .before {
+.table-holder .before {
   left: 0;
   box-shadow: 3px 0px 6px 0px #000;
   opacity: 0;
 
 }
-.responsive-table.scrolled .before {
+
+.table-holder.scrolled .before {
   opacity: 1
 }
-.responsive-table.scrolled.scrolled-end .after {
+.table-holder.scrolled.scrolled-end .after {
   opacity: 0;
 }
 .ipi-page .pi-section .table-holder.scrollable .responsive-table.table-holder {
