@@ -10694,7 +10694,8 @@ img.mfp-img {
 .ipi-page .pi-section .table-holder.scrollable .responsive-table {
   border-radius: 5px 0 0 5px;
 }
-.ipi-page .pi-section .table-holder.scrollable .responsive-table:after, .ipi-page .pi-section .table-holder.scrollable .responsive-table:before {
+.responsive-table .after, 
+.responsive-table .before {
   content: '';
   height: 100%;
   width: 3px;
@@ -10705,16 +10706,16 @@ img.mfp-img {
   z-index: 201;
   background: red;
 }
-.ipi-page .pi-section .table-holder.scrollable .responsive-table:before {
+.responsive-table .before {
   left: 0;
   box-shadow: 3px 0px 6px 0px #000;
   display: none;
 
 }
-.ipi-page .pi-section .table-holder.scrollable .responsive-table.scrolled:before {
+.responsive-table.scrolled .before {
   display: block;
 }
-.ipi-page .pi-section .table-holder.scrollable .responsive-table.scrolled.scrolled-end:after {
+.responsive-table.scrolled.scrolled-end .after {
   display: none;
 }
 .ipi-page .pi-section .table-holder.scrollable .responsive-table.table-holder {
