@@ -51,6 +51,9 @@ $(document).ready(function() {
                 target.removeClass('scrolled-end');
             }
             inn.text(target.scrollRight());
+                target.children('.after').css('right', -target.scrollLeft());
+                target.children('.before').css('left', -target.scrollRight());
+
         }
 
     $( window ).resize(addScrollable);
