@@ -10709,14 +10709,14 @@ img.mfp-img {
 .responsive-table .before {
   left: 0;
   box-shadow: 3px 0px 6px 0px #000;
-  display: none;
+  opacity: 0;
 
 }
 .responsive-table.scrolled .before {
-  display: block;
+  opacity: 1
 }
 .responsive-table.scrolled.scrolled-end .after {
-  display: none;
+  opacity: 0;
 }
 .ipi-page .pi-section .table-holder.scrollable .responsive-table.table-holder {
   overflow-x: auto;

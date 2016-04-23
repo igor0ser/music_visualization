@@ -40,7 +40,6 @@ $(document).ready(function() {
             var target = $(e.target);
             if (target.scrollLeft() > 0 && !target.hasClass('scrolled')){
                 target.addClass('scrolled');
-                target.children('.after').css('right', 0);
             }
             else if (target.scrollRight() < 2 && !target.hasClass('scrolled-end')){
                 target.addClass('scrolled-end');
