@@ -9836,7 +9836,13 @@ img.mfp-img {
   padding: 10px 35px 40px 0;
   overflow: hidden;
 }
+.pi-section {
+  display: none;
+}
 .pi-section_full {
+  display: none;
+}
+.pi-section_full1 {
   display: block;
 }
 .pi-section-title {
@@ -10100,16 +10106,24 @@ img.mfp-img {
   /* table 4*/
 }
 .ipi-page .pi-section .content {
-  list-style: none;
+  list-style-type: none;
 }
-.ipi-page .pi-section .content a {
-  cursor: pointer;
+.ipi-page .pi-section .content li:before {
+  display: none;
 }
-.ipi-page .pi-section .content li {
-  padding-left: 1.5em;
-}
-.ipi-page .pi-section .content li li {
+.ipi-page .pi-section .content li a {
+  display: inline;
+  position: relative;
   padding-left: 2em;
+}
+.ipi-page .pi-section .content li a:before {
+  counter-increment: section;
+  content: counters(section,".") " ";
+  display: inline;
+  text-decoration: underline;
+}
+.ipi-page .pi-section .content li a:hover:before {
+  text-decoration: none;
 }
 .ipi-page .pi-section .content-item {
   text-transform: uppercase;
@@ -10122,6 +10136,10 @@ img.mfp-img {
 }
 .ipi-page .pi-section .content-item.item15 {
   visibility: hidden;
+  line-height: 0;
+}
+.ipi-page .pi-section .margin-top {
+  margin-top: 20px;
 }
 .ipi-page .pi-section .contents {
   padding: 30px 0;
@@ -10355,6 +10373,9 @@ img.mfp-img {
   overflow: hidden;
   margin: 0 0 10px;
 }
+.ipi-page .pi-section .table-holder .after {
+  display: none;
+}
 .ipi-page .pi-section .table-holder.table4-holder .table-left-col {
   border-radius: 0 0 0 5px !important;
 }
@@ -10541,7 +10562,6 @@ img.mfp-img {
 }
 .ipi-page .pi-section .table.table11 thead tr td {
   width: auto;
-  vertical-align: top;
 }
 .ipi-page .pi-section .table.table13 thead tr td {
   width: auto;
@@ -10676,9 +10696,9 @@ img.mfp-img {
   position: relative;
   overflow: visible;
   margin-bottom: 40px;
+  border: 1px solid red;
 }
 .ipi-page .pi-section .table-holder.scrollable .after {
-  content: 'Scroll to view more';
   display: block;
   position: absolute;
   padding: 0 30px 0 10px;
@@ -10690,39 +10710,37 @@ img.mfp-img {
   font-weight: bold;
   color: #144734;
   background: #f1f1f3 url(../img/scroll-arrow.png) no-repeat 141px center;
-  background-size: 10%;
-}
-.table-holder .after{
-  display: none;
+  background-size: 7%;
+  z-index: 100;
+  border: 1px solid green;
 }
 .ipi-page .pi-section .table-holder.scrollable .responsive-table {
   border-radius: 5px 0 0 5px;
+  overflow-y: visible;
 }
-.table-holder:after, 
-.table-holder:before {
+.ipi-page .pi-section .table-holder.scrollable .responsive-table.table-holder {
+  overflow-x: auto;
+}
+.ipi-page .pi-section .table-holder.scrollable:after, .ipi-page .pi-section .table-holder.scrollable:before {
   content: '';
   height: 100%;
   width: 1px;
   position: absolute;
-  top: 0;
-  right: -1px;
+  top: 1px;
+  right: -2px;
   box-shadow: -3px 0px 6px 0px #000;
   z-index: 201;
 }
-.table-holder:before {
+.ipi-page .pi-section .table-holder.scrollable:before {
   left: -1px;
   box-shadow: 3px 0px 6px 0px #000;
-  opacity: 0;
-}
-
-.table-holder.scrolled .before {
-  display: block;
-}
-.table-holder.scrolled.scrolled-end .after {
   display: none;
 }
-.ipi-page .pi-section .table-holder.scrollable .responsive-table.table-holder {
-  overflow-x: auto;
+.ipi-page .pi-section .table-holder.scrollable.scrolled:before {
+  display: block;
+}
+.ipi-page .pi-section .table-holder.scrollable.scrolled.scrolled-end:after {
+  display: none;
 }
 .ipi-page .pi-section .table-holder .col-wrap {
   position: relative;
@@ -10797,11 +10815,20 @@ img.mfp-img {
   position: relative;
   padding-left: 10px;
 }
+.ipi-page .pi-section .table-note.no-margin {
+  margin-bottom: 0;
+}
 .ipi-page .pi-section .table-note:before {
   display: block;
   position: absolute;
   content: '*';
   left: 0;
+}
+.ipi-page .pi-section .table-note[data-letter]:before {
+  content: attr(data-letter);
+  font-size: 75%;
+  vertical-align: top;
+  line-height: 100%;
 }
 .ipi-page .pi-section.medication-guide hr {
   height: 1px;
