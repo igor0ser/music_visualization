@@ -9837,7 +9837,7 @@ img.mfp-img {
   overflow: hidden;
 }
 .pi-section {
-  display: none;
+  display: block
 }
 .pi-section_full {
   display: none;
